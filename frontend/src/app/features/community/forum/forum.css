@@ -167,7 +167,7 @@
   to { opacity: 1; }
 }
 .modal-backdrop .modal-box {
-  background: white;
+  background: var(--bg-surface);
   border-radius: var(--radius-xl, 16px);
   width: 100%;
   max-width: 520px;

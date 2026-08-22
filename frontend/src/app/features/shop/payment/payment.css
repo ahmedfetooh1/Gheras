@@ -342,7 +342,7 @@
 }
 
 .result-actions .btn-secondary {
-  background: white;
+  background: var(--bg-elevated);
   color: #64748b;
   border: 2px solid #e2e8f0;
 }

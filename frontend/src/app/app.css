@@ -1,11 +1,12 @@
-/* styles.css أو global styles */
+/* Global App Styles – Indigo & Neon Mint Theme */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #f8fafc;
+    font-family: 'Tajawal', 'Inter', sans-serif;
+    background-color: #07040f;
+    color: #e8edf8;
   }
   
   .page-wrapper {

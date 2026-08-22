@@ -5,7 +5,7 @@
     /* Slide from right if it's RTL? Original was left. */
     width: 380px;
     height: 100vh;
-    background: white;
+    background: var(--bg-surface);
     z-index: 20000;
     /* Ensure on top of everything, including navbar */
     box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);

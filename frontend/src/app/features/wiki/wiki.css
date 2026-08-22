@@ -66,7 +66,7 @@
 
 .search-bar input:focus {
     outline: none;
-    background: white;
+    background: var(--bg-elevated);
     transform: scale(1.02);
 }
 
@@ -113,7 +113,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background: white;
+    background: var(--bg-surface);
     padding: 1rem 0;
     border-bottom: 1px solid var(--neutral-100);
 }
@@ -157,7 +157,7 @@
 .sub-filter {
     padding: 0.4rem 1.2rem;
     font-size: 0.8rem;
-    background: white;
+    background: var(--bg-elevated);
     border-color: var(--neutral-200);
 }
 
@@ -169,7 +169,7 @@
 
 /* ── Wiki Card ── */
 .wiki-card {
-    background: white;
+    background: var(--bg-surface);
     border-radius: var(--radius-lg);
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.05);
@@ -269,7 +269,7 @@
 }
 
 .modal-box {
-    background: white;
+    background: var(--bg-surface);
     width: 95%;
     max-width: 480px;
     max-height: 85vh;
@@ -320,7 +320,7 @@
 }
 
 .page-btn {
-    background: white;
+    background: var(--bg-elevated);
     border: 1px solid var(--neutral-200);
     padding: 0.5rem 1rem;
     border-radius: 8px;

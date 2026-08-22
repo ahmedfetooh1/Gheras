@@ -1,10 +1,23 @@
-/* ── Shop Hero ── */
+/* ── Shop – Indigo & Neon Mint Theme ── */
+
+/* Shop Hero */
 .shop-hero {
-    background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 100%);
+    background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(67, 56, 202, 0.3) 100%);
+    border-bottom: 1px solid var(--border-accent);
     padding: 4rem 2rem;
     text-align: center;
     color: white;
     margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.shop-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(0, 229, 160, 0.07), transparent);
+    pointer-events: none;
 }
 
 .shop-hero h1 {
@@ -12,14 +25,19 @@
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
     margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff 40%, var(--mint-300));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .shop-hero p {
     font-size: 1.1rem;
-    opacity: 0.85;
+    opacity: 0.75;
+    color: var(--neutral-700);
 }
 
-/* ── Shop Layout ── */
+/* Shop Layout */
 .shop-layout {
     display: grid;
     grid-template-columns: 280px 1fr;
@@ -35,7 +53,7 @@
     }
 }
 
-/* ── Sidebar ── */
+/* Sidebar */
 .shop-sidebar {
     display: flex;
     flex-direction: column;
@@ -43,19 +61,20 @@
 }
 
 .shop-sidebar-card {
-    background: white;
+    background: linear-gradient(135deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.01) 100%);
+    backdrop-filter: blur(12px);
     border-radius: var(--radius-lg);
     padding: 1.5rem;
-    border: 1px solid var(--neutral-200);
+    border: 1px solid var(--border-subtle);
     box-shadow: var(--shadow-sm);
 }
 
 .shop-sidebar-title {
     font-weight: 700;
-    color: var(--green-900);
+    color: var(--neutral-900);
     margin-bottom: 1.25rem;
     font-size: 1.1rem;
-    border-bottom: 2px solid var(--green-50);
+    border-bottom: 2px solid var(--border-subtle);
     padding-bottom: 0.5rem;
 }
 
@@ -74,36 +93,41 @@
 }
 
 .cat-item:hover {
-    background: var(--green-50);
-    color: var(--green-600);
+    background: rgba(0, 229, 160, 0.08);
+    color: var(--mint-500);
 }
 
 .cat-item.active {
-    background: var(--green-600);
-    color: white;
+    background: rgba(0, 229, 160, 0.12);
+    color: var(--mint-500);
+    border-right: 2px solid var(--mint-500);
+    text-shadow: 0 0 8px rgba(0, 229, 160, 0.3);
 }
 
 .cat-count {
     font-size: 0.75rem;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.05);
     padding: 0.1rem 0.5rem;
     border-radius: 99px;
     opacity: 0.7;
+    border: 1px solid var(--border-subtle);
 }
 
 .cat-item.active .cat-count {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 229, 160, 0.15);
+    border-color: rgba(0, 229, 160, 0.3);
 }
 
 /* Price Range */
 input[type="range"] {
-    accent-color: var(--green-600);
+    accent-color: var(--mint-500);
 }
 
-/* ── Smart Recommendation Bar ── */
+/* Smart Recommendation Bar */
 .notif-bar {
-    background: linear-gradient(90deg, var(--green-700), var(--green-600));
-    color: white;
+    background: linear-gradient(90deg, rgba(67, 56, 202, 0.3), rgba(0, 229, 160, 0.1));
+    border: 1px solid var(--border-accent);
+    color: var(--neutral-900);
     padding: 1rem 1.5rem;
     border-radius: var(--radius-md);
     margin-bottom: 2rem;
@@ -111,14 +135,15 @@ input[type="range"] {
     align-items: center;
     gap: 1rem;
     font-size: 0.95rem;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-neon);
 }
 
-/* ── Products Grid ── */
+/* Products Grid */
 .product-card {
-    background: white;
+    background: linear-gradient(135deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.02) 100%);
+    backdrop-filter: blur(12px);
     border-radius: var(--radius-lg);
-    border: 1px solid var(--neutral-200);
+    border: 1px solid var(--border-subtle);
     overflow: hidden;
     transition: var(--transition);
     display: flex;
@@ -128,7 +153,8 @@ input[type="range"] {
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-md), 0 0 0 1px var(--border-accent);
+    border-color: var(--border-accent);
 }
 
 .product-img {
@@ -136,7 +162,7 @@ input[type="range"] {
     width: 100%;
     position: relative;
     overflow: hidden;
-    background: var(--neutral-50);
+    background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-surface) 100%);
 }
 
 .product-badge {
@@ -153,7 +179,7 @@ input[type="range"] {
 
 .product-name {
     font-weight: 700;
-    color: var(--green-900);
+    color: var(--neutral-900);
     font-size: 1.1rem;
     margin-bottom: 0.4rem;
 }
@@ -172,7 +198,7 @@ input[type="range"] {
 }
 
 .stars {
-    color: #fbbf24;
+    color: var(--amber-400);
     font-size: 0.8rem;
     margin-bottom: 0.75rem;
 }
@@ -180,41 +206,44 @@ input[type="range"] {
 .product-price {
     font-size: 1.25rem;
     font-weight: 800;
-    color: var(--green-700);
+    background: var(--grad-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .product-old-price {
     font-size: 0.9rem;
     text-decoration: line-through;
-    color: var(--neutral-400);
+    color: var(--neutral-500);
     margin-left: 0.5rem;
+    -webkit-text-fill-color: var(--neutral-500);
 }
 
 .product-footer {
     padding: 1rem 1.25rem;
-    background: var(--neutral-50);
-    border-top: 1px solid var(--neutral-100);
+    background: rgba(0, 229, 160, 0.03);
+    border-top: 1px solid var(--border-subtle);
     display: flex;
     gap: 0.5rem;
 }
 
-/* ── Cart Sidebar ── */
+/* Cart Sidebar */
 .cart-sidebar {
     position: fixed;
     top: 0;
     left: -400px;
-    /* Hidden on left (RTL) or right? User OS is windows, RTL project. Usually slides from side opposite to menu */
     width: 380px;
     height: 100vh;
-    background: white;
+    background: var(--bg-surface);
+    border-right: 1px solid var(--border-subtle);
     z-index: 2100;
-    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 0 50px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* For RTL Project, let's slide from right for the cart if it's better, but the original HTML had cart-overlay. I'll stick to a standard side. */
 .cart-sidebar.active {
     left: 0;
 }
@@ -222,8 +251,8 @@ input[type="range"] {
 .cart-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
     z-index: 2050;
     display: none;
 }
@@ -234,10 +263,12 @@ input[type="range"] {
 
 .cart-header {
     padding: 1.5rem;
-    border-bottom: 1px solid var(--neutral-100);
+    border-bottom: 1px solid var(--border-subtle);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: var(--bg-elevated);
+    color: var(--neutral-900);
 }
 
 .cart-items {
@@ -251,13 +282,14 @@ input[type="range"] {
     gap: 1rem;
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--neutral-50);
+    border-bottom: 1px solid var(--border-subtle);
 }
 
 .cart-item-emoji {
     width: 64px;
     height: 64px;
-    background: var(--neutral-50);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
@@ -268,25 +300,27 @@ input[type="range"] {
 .cart-item-name {
     font-weight: 700;
     font-size: 0.95rem;
-    color: var(--green-900);
+    color: var(--neutral-900);
     margin-bottom: 0.2rem;
 }
 
 .cart-item-price {
-    color: var(--green-600);
+    color: var(--mint-500);
     font-weight: 700;
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
+    text-shadow: 0 0 8px rgba(0, 229, 160, 0.3);
 }
 
 .cart-qty {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    border: 1px solid var(--neutral-200);
+    border: 1px solid var(--border-subtle);
     width: fit-content;
     padding: 0.2rem 0.5rem;
     border-radius: var(--radius-sm);
+    background: var(--bg-elevated);
 }
 
 .qty-btn {
@@ -295,12 +329,18 @@ input[type="range"] {
     font-size: 1.1rem;
     color: var(--neutral-500);
     padding: 0 0.4rem;
+    cursor: pointer;
+    transition: color .2s;
+}
+
+.qty-btn:hover {
+    color: var(--mint-500);
 }
 
 .cart-footer {
     padding: 1.5rem;
-    background: var(--neutral-50);
-    border-top: 1px solid var(--neutral-100);
+    background: var(--bg-elevated);
+    border-top: 1px solid var(--border-subtle);
 }
 
 .cart-total {
@@ -309,4 +349,5 @@ input[type="range"] {
     font-weight: 800;
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
+    color: var(--neutral-900);
 }
