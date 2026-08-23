@@ -1,0 +1,23 @@
+/* Global App Styles – Indigo & Neon Mint Theme */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Tajawal', 'Inter', sans-serif;
+    background-color: #07040f;
+    color: #e8edf8;
+  }
+  
+  .page-wrapper {
+    min-height: 100vh; /* تاخد ارتفاع الشاشة كله */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }

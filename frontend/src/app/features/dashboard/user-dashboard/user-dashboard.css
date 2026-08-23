@@ -1,0 +1,261 @@
+/* User Dashboard – Indigo & Neon Mint Theme */
+
+/* Grid Layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Plant Card */
+.plant-card {
+  background: linear-gradient(135deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.02) 100%);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.plant-card:hover {
+  box-shadow: var(--shadow-md), 0 0 0 1px var(--border-accent);
+  transform: translateY(-4px);
+  border-color: var(--border-accent);
+}
+
+.plant-card-img {
+  height: 180px;
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-surface) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-pattern {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(0, 229, 160, .10), transparent 60%);
+  opacity: 0.7;
+}
+
+.plant-card-body {
+  padding: 1.25rem;
+  flex: 1;
+}
+
+.plant-card-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--neutral-900);
+  margin-bottom: 0.25rem;
+}
+
+.plant-card-sub {
+  font-size: .82rem;
+  color: var(--neutral-500);
+}
+
+/* Health Dot */
+.health-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.health-good { background: #00e5a0; box-shadow: 0 0 6px rgba(0,229,160,.5); }
+.health-warn { background: #fbbf24; box-shadow: 0 0 6px rgba(251,191,36,.5); }
+.health-bad  { background: #f87171; box-shadow: 0 0 6px rgba(248,113,113,.5); }
+
+/* Progress Bar */
+.progress-bar {
+  background: var(--bg-elevated);
+  border-radius: 99px;
+  height: 8px;
+  overflow: hidden;
+  margin-top: .5rem;
+  border: 1px solid var(--border-subtle);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--mint-500), #4338ca);
+  transition: width .6s ease;
+  box-shadow: 0 0 8px rgba(0, 229, 160, 0.5);
+}
+
+/* Tabs for Detail Modal */
+.tabs-wrapper {
+  margin-top: 1rem;
+}
+
+.timeline {
+  margin-top: 1.5rem;
+  position: relative;
+  padding-right: 1.5rem;
+  border-right: 2px solid var(--border-subtle);
+}
+
+.tl-item {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.tl-dot {
+  position: absolute;
+  right: -23px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--neutral-300);
+  border: 2px solid var(--bg-base);
+}
+
+.tl-dot.done {
+  background: var(--mint-500);
+  box-shadow: 0 0 6px rgba(0,229,160,.4);
+}
+
+.tl-dot.current {
+  background: var(--amber-400);
+  box-shadow: 0 0 0 4px rgba(251,191,36,.15);
+}
+
+/* Modal Boxes */
+.modal-box {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  max-width: 500px;
+  width: 90%;
+  margin: 10vh auto;
+  box-shadow: var(--shadow-xl), 0 0 40px rgba(99,102,241,.2);
+  overflow: hidden;
+  position: relative;
+}
+
+.add-plant-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: none;
+  z-index: 99999 !important;
+}
+
+.add-plant-modal.open {
+  display: block;
+}
+
+/* Badge Overrides for Card */
+.plant-card .badge {
+  box-shadow: var(--shadow-sm);
+  font-size: 0.7rem;
+}
+
+/* Notifications Dropdown */
+.notif-dropdown {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: var(--bg-elevated);
+  backdrop-filter: blur(16px);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl), 0 0 0 1px var(--border-subtle);
+  width: 320px;
+  z-index: 200;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--border-subtle);
+}
+
+.notif-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  font-weight: 700;
+  background: rgba(0, 229, 160, 0.04);
+  color: var(--neutral-700);
+}
+
+.notif-list-item {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: .88rem;
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+  transition: background .2s ease;
+}
+
+.notif-list-item:hover {
+  background: rgba(0, 229, 160, 0.05);
+}
+
+/* Upgrade Banner */
+.upgrade-banner {
+  background: linear-gradient(135deg, rgba(67,56,202,.3) 0%, rgba(0,229,160,.08) 100%);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: white;
+  margin-top: 2rem;
+  box-shadow: var(--shadow-neon);
+}
+
+.upgrade-banner img {
+  width: 80px;
+  height: 80px;
+}
+
+.upgrade-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: .3rem;
+  color: var(--neutral-900);
+}
+
+.upgrade-text {
+  opacity: .75;
+  font-size: .88rem;
+  color: var(--neutral-700);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-3, .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .plant-card-img {
+    height: 150px;
+  }
+
+  .upgrade-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
